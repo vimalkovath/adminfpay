@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonRow, IonCol, IonButton, IonList, IonItem, IonLabel, IonInput, IonText } from '@ionic/react';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonPage, IonCard, IonButtons, IonMenuButton, IonRow, IonCol, IonButton, IonList, IonItem, IonLabel, IonInput, IonText } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
 import { Redirect } from "react-router";
 
-interface OwnProps extends RouteComponentProps {}
+interface OwnProps extends RouteComponentProps { }
 
 
 
-const Signup: React.FC= (props) => {
+const Signup: React.FC = (props) => {
 
   const [username, setUsername] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -16,20 +16,21 @@ const Signup: React.FC= (props) => {
   const Signup = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
-    if(!username) {
+    if (!username) {
       setUsernameError(true);
-    }else{console.log('inside');
-        // return <Redirect to={"/signupcamera"} />;
-        goForward();
-      
-      
+    } else {
+      console.log('inside');
+      // return <Redirect to={"/signupcamera"} />;
+      goForward();
+
+
     }
- 
-  
-        
-  
+
+
+
+
   };
-  let goForward = ()=>{
+  let goForward = () => {
     (props as any).history.push("/")
   }
 
@@ -37,39 +38,39 @@ const Signup: React.FC= (props) => {
     <IonPage id="signup-page">
       <IonHeader>
         <IonToolbar>
-        <IonButtons slot="start">
-        <img src="assets/g_400x400.png" className="gimageLogo" alt="Ionic logo" />
-        </IonButtons>
+          <IonButtons slot="start">
+            <img src="assets/g_400x400.png" className="gimageLogo" alt="Ionic logo" />
+          </IonButtons>
           <IonTitle>Dashboard</IonTitle>
         </IonToolbar>
       </IonHeader>
 
 
       <IonContent>
+        <IonRow>
+          <IonCol col-6>
+              <IonButton routerLink="/phone" className="next next-special" color="success" expand="block">
+               Payment
+              </IonButton>
+          </IonCol>
 
-      <IonRow>  
-      <IonCol>
-        <IonButton routerLink="/phone" className="next" color="success" expand="block">Grab food</IonButton>
-      </IonCol>
-    </IonRow>
+          <IonCol col-6>
+              <IonButton routerLink="/phone" className="next next-special" color="success" expand="block">
+                sales list
+              </IonButton>
+          </IonCol>
 
-    <IonRow>  
-    <IonCol>
-      <IonButton routerLink="/phone" className="next" color="success" expand="block">Grab Express</IonButton>
-    </IonCol>
-  </IonRow>
+        </IonRow>
 
-  <IonRow>  
-  <IonCol>
-    <IonButton routerLink="/phone" className="next" color="success" expand="block">Grab Bike</IonButton>
-  </IonCol>
-</IonRow>
-
-<IonRow>  
-<IonCol>
-  <IonButton routerLink="/signupcamera" className="next" color="success" expand="block">New User </IonButton>
-</IonCol>
-</IonRow>
+      
+        <IonRow>
+        <IonCol col-6>
+            <IonButton routerLink="/signupcamera" className="next next-special" color="success" expand="block">New User </IonButton>
+          </IonCol>
+          <IonCol col-6>
+          <IonButton routerLink="/signupcamera" className="next next-special" color="success" expand="block">New User </IonButton>
+        </IonCol>
+        </IonRow>
 
       </IonContent>
 

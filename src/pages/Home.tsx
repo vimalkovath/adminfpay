@@ -54,7 +54,7 @@ export class Home extends Component {
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Grab</IonTitle>
+            <IonTitle>Face</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
