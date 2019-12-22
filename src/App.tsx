@@ -11,6 +11,7 @@ import Success from './pages/Success';
 import Invalid from './pages/Invalid';
 import Security from './pages/Security';
 import Signupcamera from './pages/Signupcamera';
+import SalesList from './pages/SalesList';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -37,6 +38,7 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
         <Route path="/phone" component={Phone} exact={true} />
+        <Route path="/saleslist" component={SalesList} exact={true} />
         <Route path="/dashboard" component={Signup} exact={true} />
         <Route path="/payment" component={Payment} exact={true} />
         <Route path="/cameraa" component={Cameraa} exact={true} />

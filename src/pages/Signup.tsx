@@ -47,16 +47,17 @@ const Signup: React.FC = (props) => {
 
 
       <IonContent>
+      
         <IonRow>
           <IonCol col-6>
               <IonButton routerLink="/phone" className="next next-special" color="success" expand="block">
-               Payment
+               Do Payment
               </IonButton>
           </IonCol>
 
           <IonCol col-6>
               <IonButton routerLink="/phone" className="next next-special" color="success" expand="block">
-                sales list
+                Alfanumeric Pay
               </IonButton>
           </IonCol>
 
@@ -65,7 +66,7 @@ const Signup: React.FC = (props) => {
       
         <IonRow>
         <IonCol col-6>
-            <IonButton routerLink="/signupcamera" className="next next-special" color="success" expand="block">New User </IonButton>
+            <IonButton routerLink="/saleslist" className="next next-special" color="success" expand="block">Sales List</IonButton>
           </IonCol>
           <IonCol col-6>
           <IonButton routerLink="/signupcamera" className="next next-special" color="success" expand="block">New User </IonButton>

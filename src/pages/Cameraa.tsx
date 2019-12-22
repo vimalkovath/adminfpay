@@ -24,6 +24,7 @@ export class Cameraa extends Component {
     state: any = {};
     props: any = {};
 phone:any;
+amount:any;
 
     constructor(props: any) {
         super(props);
@@ -31,6 +32,7 @@ phone:any;
         defineCustomElements(window);
         console.log(props.history.location.state ,'history');
         this.phone=  props.history.location.state;
+        this.amount=  props.history.location.state;
         this.setState({
             phoneno:props.history.location.state
         })

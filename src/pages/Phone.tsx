@@ -15,8 +15,19 @@ interface DispatchProps {
 const Phone: React.FC = (props) => {
 
   const [phoneno, setPhoneno] = useState('');
+  const [ amount,setAmount] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [phonenoError, setPhonenoError] = useState(false);
+
+  const Amount = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    if(!amount) {
+      setPhonenoError(true);
+    }else{   
+            goForward();}
+  };
+
 
   const Phone = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,12 +62,19 @@ const Phone: React.FC = (props) => {
 
         <form noValidate onSubmit={Phone}>
           <IonList>
+          <IonItem>
+              <IonLabel position="stacked" color="primary">Amount</IonLabel>
+              <IonInput name="amount" type="text" className="center"  value={amount} spellCheck={false} autocapitalize="off" onIonChange={e => setAmount(e.detail.value!)}
+                required>
+              </IonInput>
+            </IonItem>
             <IonItem>
               <IonLabel position="stacked" color="primary">Phoneno / User ID</IonLabel>
               <IonInput name="phoneno" type="text" className="center"  value={phoneno} spellCheck={false} autocapitalize="off" onIonChange={e => setPhoneno(e.detail.value!)}
                 required>
               </IonInput>
             </IonItem>
+
 
             {formSubmitted && phonenoError && <IonText color="danger">
               <p className="ion-padding-start">

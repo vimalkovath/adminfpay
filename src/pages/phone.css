@@ -21,3 +21,8 @@ inpyt[type=text] {
       display: block;
       padding: 10px;
   }
+
+  .sc-ion-card-md-s img {
+    display: block;
+    width: 45px;
+}
